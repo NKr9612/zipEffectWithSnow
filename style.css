@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow: hidden;
+}
+.zipPack {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 20px;
+  border-radius: 40%;
+  background: rgb(222, 182, 16);
+  background: linear-gradient(
+    83deg,
+    rgba(222, 182, 16, 1) 2%,
+    rgba(212, 155, 138, 1) 49%,
+    rgba(235, 75, 12, 1) 100%
+  );
+}
+
+#dot {
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    177deg,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
+  cursor: pointer;
+  z-index: 2;
+}
+@keyframes fadingGreen {
+  0% {
+    background-color: rgba();
+  }
+  10% {
+    background-color: rgba(255, 255, 255, 1);
+  }
+  50% {
+    background-color: rgba(48, 100, 56, 0.5);
+  }
+  100% {
+    background-color: rgba(48, 100, 56, 1);
+  }
+}
+
+@keyframes fadingOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadingRed {
+  0% {
+    background-color: black;
+  }
+  100% {
+    background-color: red;
+  }
+}
+
+.fadingOut {
+  animation: fadingOut 0.5s linear 0s forwards;
+}
+
+.fadingGreenClass {
+  animation: fadingGreen 2s linear 0.5s forwards;
+}
+.fadingRed {
+  animation: fadingRed 1s linear 0s forwards;
+}
+
+.snowflake {
+  opacity: 0;
+}
