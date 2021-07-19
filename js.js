@@ -45,21 +45,33 @@ function mouseMove(e) {
 
     if (e.clientX > zipStart + 300) {
       zipPack.classList.add("fadingRed");
-      span.style.backgroundColor = "gray";
+
+      const element = document.createElement("div");
+      document.querySelector(".zipPack").appendChild(element);
+      document.querySelector(".zipPack div").textContent = "Super!";
+      // document.querySelector(".content").classList.add("fadingOut");
 
       setTimeout(() => {
-        zipPack.style.backgroundColor = "red";
+        zipPack.style.backgroundColor = "#ce421d";
         zipPack.classList.remove("fadingRed");
         void zipPack.offsetWidth;
-        zipPack.classList.add("fadingOut");
-        document.querySelector("body").classList.add("fadingGreenClass");
         setTimeout(() => {
-          document
-            .querySelectorAll(".snowflake")
-            .forEach((i) => (i.style.opacity = "1"));
+          zipPack.classList.add("puffOut");
+        }, 500);
+
+        setTimeout(() => {
+          document.querySelectorAll(".snowflake").forEach((i) => {
+            i.style.opacity = "1";
+            i.style.zIndex = "0";
+            document.querySelector(".after1").classList.add("vanishIn");
+            document.querySelector(".after2").style.animationDelay = "0.5s";
+            document.querySelector(".after2").classList.add("vanishIn");
+            document.querySelector(".after3").style.animationDelay = "1s";
+            document.querySelector(".after3").classList.add("vanishIn");
+          });
           snowflake.init();
         }, 1500);
-      }, 1000);
+      }, 800);
     }
   }
 }
